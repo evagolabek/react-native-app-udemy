@@ -1,16 +1,31 @@
-// import libraries for making component ({distructed import - text tag})
+// import libraries for making component ({distructed import - text tag(primitive element e.g. text, view)})
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 //make a component(in this case fat arrow function)
 const  Header = () => {
-  const { textStyle } = styles;
-  return <Text style={textStyle}>Albums</Text>;
+  const { textStyle, viewStyle } = styles;
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>Albums</Text>
+    </View>
+  );
 };
 
 const styles = {
+  viewStyle: {
+    backgroundColor: '#cce6ff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2},
+    shadowOpacity: 0.2,
+    position: 'relative'
+  },
   textStyle: {
-    fontSize: 50
+    fontSize: 40
   }
 };
 
