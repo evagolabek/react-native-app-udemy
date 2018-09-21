@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
   state = { albums: [] };
@@ -12,10 +13,16 @@ class AlbumList extends Component {
 
   //helper method to generate the album detail list (with map - array helper)
   //referencing js variable in jsx always with {} (like album.title below)
+  // key property added for React to figure out which item on the list it is updating
+  //key property must be unique(against all the other elements in the array)
+  // and the same value across rerenders of the list
+
   renderAlbums() {
-    return this.state.albums.map(album => <Text>{album.title}</Text>)
+    return this.state.albums.map(album =>
+      <AlbumDetail key={album.title} album={album} />
+    );
   }
-  render() {
+    render() {
     console.log(this.state);
     return (
       <View>
