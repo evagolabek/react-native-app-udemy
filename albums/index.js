@@ -5,6 +5,7 @@ import Header from './src/components/header';
 import AlbumList from './src/components/AlbumList';
 
 //create a component (functional component i.e. functions that return some jsx to be displayed)
+// in case the ScrollView doesnt work add style={{ flex: 1 }} to view here
 const App = () => (
   <View>
     <Header headerText={'Albums'} />
