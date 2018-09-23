@@ -4,12 +4,12 @@ import { Text, TouchableOpacity } from 'react-native';
 // TouchableOpacity is one of the few option for buttons from ReactNative
 // onPress prop added to TouchableOpacity where we pass a function
 // when its pressed the function will be called
-const Button = ({ onPress }) => {
+const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
   return (
     <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>
-        Click here
+        {children}
       </Text>
     </TouchableOpacity>
   );
