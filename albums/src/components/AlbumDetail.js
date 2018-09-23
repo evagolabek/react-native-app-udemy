@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 // when you have more (e.g. x 3 like below) references to props
 // its good convention to d-structure it out of argument of props
@@ -35,6 +36,9 @@ const AlbumDetail = ({ album }) => {
         <Image
           style={imageStyle}
           source={{ uri: image }} />
+      </CardSection>
+      <CardSection>
+        <Button />
       </CardSection>
     </Card>
   );
