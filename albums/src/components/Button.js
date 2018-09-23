@@ -1,10 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = () => {
+// TouchableOpacity is one of the few option for buttons from ReactNative
+// onPress prop added to TouchableOpacity where we pass a function
+// when its pressed the function will be called
+const Button = ({ onPress }) => {
   const { buttonStyle, textStyle } = styles;
   return (
-    <TouchableOpacity style={buttonStyle}>
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>
         Click here
       </Text>
@@ -12,7 +15,7 @@ const Button = () => {
   );
 };
 
-// flex1 means expand as much content as possible
+// flex: 1 means expand as much content as possible
 // alignSelf (property type of the flexbox stretch) fills until the limit of the container
 
 const styles = {

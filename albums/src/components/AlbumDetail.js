@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -10,7 +10,7 @@ import Button from './Button';
 // and because you use album reference (x3) you need to d-structure as well
 // you can d-structure it directly next to ({album}) or list below in const/ more tidy
 const AlbumDetail = ({ album }) => {
-  const { title, artist, thumbnail_image, image } = album;
+  const { title, artist, thumbnail_image, image, url } = album;
   const { thumbnailStyle,
           headerContentStyle,
           thumbnailContainerStyle,
@@ -38,7 +38,7 @@ const AlbumDetail = ({ album }) => {
           source={{ uri: image }} />
       </CardSection>
       <CardSection>
-        <Button />
+        <Button onPress={() => Linking.openURL(url)} />
       </CardSection>
     </Card>
   );
